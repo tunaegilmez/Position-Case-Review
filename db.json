@@ -1,0 +1,15 @@
+{
+  "currency": [
+    { "text": "TRY", "floorNum": 29 },
+    { "text": "USD", "floorNum": 4 },
+    { "text": "EUR", "floorNum": 1 },
+    { "text": "GBP", "floorNum": 10 },
+    { "text": "JPY", "floorNum": 11 },
+    { "text": "CAD", "floorNum": 8 },
+    { "text": "AUD", "floorNum": 9 },
+    { "text": "CHF", "floorNum": 20 },
+    { "text": "CNY", "floorNum": 13 },
+    { "text": "RUB", "floorNum": 17 }
+  ],
+  "positions": []
+}
