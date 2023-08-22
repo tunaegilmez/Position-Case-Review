@@ -17,5 +17,5 @@ const savePosition = async (data) => {
 
 export const positionService = {
     getPositions,
-    savePosition
+    savePosition,
 }

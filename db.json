@@ -1,15 +1,116 @@
 {
   "currency": [
-    { "text": "TRY", "floorNum": 29 },
-    { "text": "USD", "floorNum": 4 },
-    { "text": "EUR", "floorNum": 1 },
-    { "text": "GBP", "floorNum": 10 },
-    { "text": "JPY", "floorNum": 11 },
-    { "text": "CAD", "floorNum": 8 },
-    { "text": "AUD", "floorNum": 9 },
-    { "text": "CHF", "floorNum": 20 },
-    { "text": "CNY", "floorNum": 13 },
-    { "text": "RUB", "floorNum": 17 }
+    {
+      "text": "TRY",
+      "floorNum": 29
+    },
+    {
+      "text": "USD",
+      "floorNum": 4
+    },
+    {
+      "text": "EUR",
+      "floorNum": 1
+    },
+    {
+      "text": "GBP",
+      "floorNum": 10
+    },
+    {
+      "text": "JPY",
+      "floorNum": 11
+    },
+    {
+      "text": "CAD",
+      "floorNum": 8
+    },
+    {
+      "text": "AUD",
+      "floorNum": 9
+    },
+    {
+      "text": "CHF",
+      "floorNum": 20
+    },
+    {
+      "text": "CNY",
+      "floorNum": 13
+    },
+    {
+      "text": "RUB",
+      "floorNum": 17
+    }
   ],
-  "positions": []
+  "positions": [
+    {
+      "data": {
+        "id": 1,
+        "text": "Tuna"
+      },
+      "id": 1
+    },
+    {
+      "data": {
+        "id": 1,
+        "text": "Tuna"
+      },
+      "id": 2
+    },
+    {
+      "data": {
+        "id": 1,
+        "text": "Tuna"
+      },
+      "id": 3
+    },
+    {
+      "data": {
+        "id": 1,
+        "text": "Tuna"
+      },
+      "id": 4
+    },
+    {
+      "data": {
+        "id": 1,
+        "text": "Tuna"
+      },
+      "id": 5
+    },
+    {
+      "data": {
+        "id": 1,
+        "text": "Tuna"
+      },
+      "id": 6
+    },
+    {
+      "data": {
+        "id": 1,
+        "text": "Tuna"
+      },
+      "id": 7
+    },
+    {
+      "data": {
+        "id": 1,
+        "text": "Tuna"
+      },
+      "id": 8
+    },
+    {
+      "data": {
+        "id": 1,
+        "text": "Tuna"
+      },
+      "id": 9
+    },
+    {
+      "data": {
+        "id": 1,
+        "text": "Tuna"
+      },
+      "id": 10
+    }
+  ]
 }
