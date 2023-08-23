@@ -3,8 +3,10 @@
       color="primary"
       dark
       app
+      rounded
+      outlined
       :style="appBarStyle"
-      class="flex justify-center items-center"
+      class="flex justify-center items-center w-[75vw]"
     >
       <v-toolbar-title class="text-3xl">Total Amount: 0 €</v-toolbar-title>
     </v-app-bar>
@@ -16,7 +18,6 @@ export default {
     appBarStyle() {
       return {
         height: '78px',
-        borderRadius: '10px',
         margin: '0 auto',
       };
     },

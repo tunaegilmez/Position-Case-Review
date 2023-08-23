@@ -4,8 +4,7 @@
     :value="selectedItem"
     :label="label"
     outlined
-    :full-width="fullWidth"
-    :dense="dense"
+    dense
     @input="updateSelectedItem"
   ></v-combobox>
 </template>
@@ -17,8 +16,6 @@ export default {
     value: String,
     label: String,
     placeholder: String,
-    fullWidth: Boolean,
-    dense: Boolean,
   },
   computed: {
     selectedItem: {

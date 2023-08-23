@@ -17,6 +17,7 @@
           :dense="false"
         ></TextField>
       </div>
+      {{ name }}
     </PositionCard>
   </div>
 </template>
@@ -35,6 +36,7 @@ export default {
     return {
       testData: ['Apple', 'Banana', 'Orange', 'Strawberry'],
       selectedData: '',
+      name: ''
     };
   },
 };

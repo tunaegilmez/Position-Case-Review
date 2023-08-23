@@ -1,12 +1,12 @@
 <template>
   <div>
-    <div>
-      <!-- <Header></Header> -->
-      <ToastAlert type="success" :duration="1000">Success</ToastAlert>
-    </div>
+    <!-- <div>
+      <Header></Header>
+    </div> -->
     <div>
       <SinglePosition></SinglePosition>
     </div>
+    <ToastAlert type="success" :duration="1000">Success</ToastAlert>
   </div>
 </template>
 
@@ -19,7 +19,7 @@ export default {
   components: {
     // Header,
     SinglePosition,
-    ToastAlert
+    ToastAlert,
   },
 
   data: () => ({

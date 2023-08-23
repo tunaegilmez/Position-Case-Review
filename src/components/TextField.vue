@@ -5,7 +5,7 @@
       :placeholder="placeholder"
       outlined
       :full-width="fullWidth"
-      :dense="dense"
+      dense
       @input="$emit('input', $event)"
     ></v-text-field>
   </template>
