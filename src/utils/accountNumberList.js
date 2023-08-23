@@ -1,35 +1,31 @@
-import {v4 as uuidv4} from 'uuid';
-
-let myuuid = uuidv4();
-
-const randomNumber = Math.floor(Math.random() * (999999 - 100000 + 1)) + 100000;
+import { v4 as uuidv4 } from "uuid";
 
 const ACCOUNT_NUMBERS = [
-    {
-        _id: myuuid,
-        caption: "Mandant",
-        account_number: randomNumber,
-      },
-      {
-        _id: myuuid,
-        caption: "Test Firma",
-        account_number: randomNumber,
-      },
-      {
-        _id: myuuid,
-        caption: "Digitastic",
-        account_number: randomNumber,
-      },
-      {
-        _id: myuuid,
-        caption: "Company Name Test",
-        account_number: randomNumber,
-      },
-      {
-        _id: myuuid,
-        caption: "Company Name",
-        account_number: randomNumber,
-      },
-]
+  {
+    _id: uuidv4(),
+    caption: "Mandant",
+    account_number: Math.floor(Math.random() * (999999 - 100000 + 1)) + 100000,
+  },
+  {
+    _id: uuidv4(),
+    caption: "Test Firma",
+    account_number: Math.floor(Math.random() * (999999 - 100000 + 1)) + 100000,
+  },
+  {
+    _id: uuidv4(),
+    caption: "Digitastic",
+    account_number: Math.floor(Math.random() * (999999 - 100000 + 1)) + 100000,
+  },
+  {
+    _id: uuidv4(),
+    caption: "Company Name Test",
+    account_number: Math.floor(Math.random() * (999999 - 100000 + 1)) + 100000,
+  },
+  {
+    _id: uuidv4(),
+    caption: "Company Name",
+    account_number: Math.floor(Math.random() * (999999 - 100000 + 1)) + 100000,
+  },
+];
 
-export default ACCOUNT_NUMBERS
+export default ACCOUNT_NUMBERS;

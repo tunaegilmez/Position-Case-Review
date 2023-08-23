@@ -3,7 +3,7 @@
     <div class="top-0 left-0 bg-white text-black text-md font-bold">
       Position {{ position }}
     </div>
-    <div class="flex flex-row gap-4">
+    <div class="flex flex-row">
       <slot></slot>
     </div>
   </div>

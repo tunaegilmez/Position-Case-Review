@@ -7,8 +7,8 @@
       <v-main>
         <PositionView></PositionView>
       </v-main>
-      <!-- <button @click="saveNewPosition">Add</button>
-        {{ positions }} -->
+      <button @click="saveNewPosition">Add</button>
+        {{ positions }}
       <footer>
         <CaseFooter class="mt-auto"></CaseFooter>
       </footer>
@@ -43,18 +43,12 @@ export default {
   },
   methods: {
     ...mapActions("position", ["getPositions", "savePosition"]),
-    // async test() {
-    //   const response = await currencyService.getCurrencys();
-    //   console.log(response);
-    //   return response;
-    // },
-    // async saveNewPosition() {
-    //   const response = await this.savePosition(this.positionSaveData);
-    //   return response;
-    // },
+    async saveNewPosition() {
+      const response = await this.savePosition(this.positionSaveData);
+      return response;
+    },
   },
   mounted() {
-    this.test();
     this.getPositions();
   },
 };

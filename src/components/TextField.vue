@@ -2,10 +2,11 @@
     <v-text-field
       :value="value"
       :label="label"
-      :placeholder="placeholder"
       outlined
+      hide-details
       :full-width="fullWidth"
       dense
+      :type="type"
       @input="$emit('input', $event)"
     ></v-text-field>
   </template>
@@ -18,6 +19,7 @@
       placeholder: String,
       fullWidth: Boolean,
       dense: Boolean,
+      type: String
     },
   };
   </script>
