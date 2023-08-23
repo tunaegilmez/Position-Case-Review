@@ -13,6 +13,9 @@ const mutations = {
   ADD_POSITION(state, payload) {
     state.positions.push(payload);
   },
+  DELETE_POSITION(state, positionId) {
+    state.positions = state.positions.filter(position => position.id !== positionId);
+  },
 };
 const actions = {
   async getPositions({ commit }) {
@@ -20,7 +23,7 @@ const actions = {
       const positions = await positionService.getPositions();
       commit("SET_POSITION", positions);
     } catch (error) {
-      console.error("Position can not get!:", error);
+      console.error("Pozisyonlar getirilmedi:", error);
     }
   },
   async savePosition({ commit }, payload) {
@@ -29,6 +32,14 @@ const actions = {
       commit("ADD_POSITION", response.data);
     } catch (error) {
       console.error("Pozisyon kaydedilemedi:", error);
+    }
+  },
+  async deletePosition({ commit }, positionId) {
+    try {
+      await positionService.deletePostion(positionId);
+      commit("DELETE_POSITION", positionId);
+    } catch (error) {
+      console.error("Pozisyon silinemedi:", error);
     }
   },
 };

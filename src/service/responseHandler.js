@@ -1,25 +1,34 @@
 export const responseHandler = async (response) => {
   if (response.ok) {
-    return await response.json()
-  }else {
+    return await response.json();
+  } else {
     return {
-        status: response.status,
-        statusText: response.statusText,
-        url: response.url
-    }
+      status: response.status,
+      statusText: response.statusText,
+      url: response.url,
+    };
   }
-}
+};
 
 export const oAuthGetOptions = () => ({
   methods: "GET",
   header: "content-type: application/json",
-})
+});
 
-export const oAuthPostOptions = body => ({
+export const oAuthPostOptions = (body) => ({
   method: "POST",
   headers: {
-    "accept": "application/json",
+    accept: "application/json",
     "Content-Type": "application/json;charset=utf-8",
   },
-  body: JSON.stringify(body)
-})
+  body: JSON.stringify(body),
+});
+
+export const oAuthDeleteOptions = (body) => ({
+  method: "DELETE",
+  headers: {
+    accept: "application/json",
+    "Content-Type": "application/json;charset=utf-8",
+  },
+  body: JSON.stringify(body),
+});
