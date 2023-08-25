@@ -1,5 +1,5 @@
 <template>
-  <div class="border-b-2 border-black flex flex-col justify-center gap-3 w-[75vw]" style="margin: 0 auto;">
+  <div class="card border-black flex flex-col justify-center gap-3 mt-3 w-[75vw]" style="margin: 0 auto;">
     <div class="top-0 left-0 bg-white text-black text-md font-bold">
       Position {{ position }}
     </div>
@@ -16,3 +16,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.card {
+  border-bottom: 1px solid black;
+}
+</style>

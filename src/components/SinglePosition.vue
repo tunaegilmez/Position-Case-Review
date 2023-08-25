@@ -1,6 +1,8 @@
 <template>
+  <div>
     <PositionCard>
       <div class="flex flex-row gap-3 w-full">
+        {{ position }}
         <div class="w-36">
           <ComboBox
             :items="currencyData"
@@ -41,16 +43,14 @@
         </div>
       </div>
       <div class="flex flex-row border-l-2 h-10 pl-3 items-center">
-        <v-icon
-          class="cursor-pointer border p-2 text-green-500 hover:text-green-700 hover:bg-slate-300"
+        <v-icon class="cursor-pointer border p-2 my_icons">mdi-delete</v-icon>
+        <v-icon @click="saveHandle()" class="cursor-pointer border p-2 my_icons"
           >mdi-content-save</v-icon
-        >
-        <v-icon
-          class="cursor-pointer border p-2 text-red-500 hover:text-red-700 hover:bg-slate-300"
-          >mdi-delete</v-icon
         >
       </div>
     </PositionCard>
+    <ToastAlert type="warning" :visible="isVisible" :duration="1000">there are empty fields</ToastAlert>
+  </div>
 </template>
 
 <script>
@@ -60,35 +60,71 @@ import PositionCard from "../shared/PositionCard.vue";
 import { currencyService } from "@/service/currency.service";
 import ACCOUNT_NUMBERS from "@/utils/accountNumberList";
 import PAYMENT_METHODS from "@/utils/paymentMethodsList";
+import { mapActions, mapGetters } from "vuex";
+import { areFieldsFilled } from "@/helper/validateInputs";
+import ToastAlert from "@/shared/ToastAlert.vue";
 
 export default {
   components: {
     ComboBox,
     TextField,
     PositionCard,
-  },
+    ToastAlert
+},
   data() {
     return {
       currencyData: [],
-      selectedCurrency: null,
-      amount: null,
-      selectedAccount: null,
-      selectedPayment: null,
+      selectedCurrency: "",
+      amount: "",
+      selectedAccount: "",
+      selectedPayment: "",
       description: "",
+      isVisible: false
     };
   },
+  props: {
+    position: Object
+  },
   computed: {
+    ...mapGetters("position", ["positions"]),
     accountNumbers() {
-      return ACCOUNT_NUMBERS.map((account) => account.account_number);
+      return ACCOUNT_NUMBERS.map(
+        (item) => `${item.account_number} - ${item.caption}`
+      );
     },
     paymentMethods() {
       return PAYMENT_METHODS.map((payment) => payment.paymentType);
     },
   },
   methods: {
+    ...mapActions("position", ["savePosition"]),
     async getCurrency() {
       const response = await currencyService.getCurrencys();
       this.currencyData = response;
+    },
+    async saveHandle() {
+      const fieldsToValidate = [
+        { value: this.selectedCurrency.text },
+        { value: this.amount },
+        { value: this.selectedAccount },
+        { value: this.selectedPayment },
+        { value: this.description },
+      ];
+      if (areFieldsFilled(fieldsToValidate)) {
+        const response = await this.savePosition({
+          currency: this.selectedCurrency,
+          amount: this.amount,
+          accountNumber: this.selectedAccount,
+          payment: this.selectedPayment,
+          description: this.description,
+        });
+        return response;
+      } else {
+        this.isVisible = true
+        setTimeout(() => {
+          this.isVisible = false
+        }, 2000)
+      }
     },
   },
   created() {
@@ -96,3 +132,14 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.my_icons {
+  border: 1px solid #cccccc;
+  color: #666666;
+}
+.my_icons:hover {
+  background-color: #4a90e214;
+  color: #4a90e2;
+}
+</style>

@@ -1,11 +1,5 @@
 <template>
-  <v-alert
-    :value="visible"
-    :type="type"
-    dismissible
-    @input="visible = false"
-    class="custom-alert"
-  >
+  <v-alert :value="visible" :type="type" class="custom-alert">
     <slot></slot>
   </v-alert>
 </template>
@@ -17,23 +11,9 @@ export default {
       type: String,
       default: "info",
     },
-    duration: {
-      type: Number,
-      default: 2000, // Default duration in milliseconds (2 seconds)
-    },
-  },
-  data() {
-    return {
-      visible: true,
-    };
-  },
-  watch: {
-    visible(newValue) {
-      if (newValue) {
-        setTimeout(() => {
-          this.visible = false;
-        }, this.duration);
-      }
+    visible: {
+      type: Boolean,
+      default: true,
     },
   },
 };
@@ -42,9 +22,8 @@ export default {
 <style scoped>
 .custom-alert {
   position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 20px;
+  right: 20px;
   z-index: 9999;
 }
 </style>

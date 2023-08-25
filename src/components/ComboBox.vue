@@ -13,7 +13,7 @@
 export default {
   props: {
     items: Array,
-    value: String,
+    value: [String, Number, Object],
     label: String,
     placeholder: String,
   },

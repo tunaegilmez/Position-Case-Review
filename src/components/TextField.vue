@@ -14,7 +14,7 @@
   <script>
   export default {
     props: {
-      value: String,
+      value: [String, Number],
       label: String,
       placeholder: String,
       fullWidth: Boolean,
